@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Muhamad Fachrul Islam — Administration, Data Management, dan Digital Support.">
+  <title>Muhamad Fachrul Islam | Administration • Data Management • Digital Support</title>
+  <style>
+    :root{
+      --navy:#0b2d6b;
+      --navy2:#071d45;
+      --blue:#1d4ed8;
+      --text:#172033;
+      --muted:#64748b;
+      --line:#e6eaf0;
+      --bg:#f7f9fc;
+      --white:#fff;
+      --shadow:0 18px 50px rgba(15,35,75,.10);
+      --radius:20px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);background:var(--bg);line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1100px,92%);margin:auto}
+    nav{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);border-bottom:1px solid rgba(230,234,240,.8)
+    }
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.5px;color:var(--navy)}
+    .brand span{display:block;font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:600}
+    .nav-links{display:flex;gap:25px;font-size:14px;color:#475569}
+    .nav-links a:hover{color:var(--navy)}
+    .hero{
+      background:linear-gradient(135deg,var(--navy2),var(--navy));
+      color:#fff;padding:95px 0 85px;position:relative;overflow:hidden
+    }
+    .hero:after{
+      content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.12);
+      border-radius:50%;right:-150px;top:-160px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:55px;align-items:center;position:relative;z-index:1}
+    .eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#bfdbfe;font-weight:700;margin-bottom:18px}
+    h1{font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-2.5px;margin-bottom:18px}
+    .hero h2{font-size:clamp(17px,2vw,23px);font-weight:600;color:#dbeafe;margin-bottom:22px}
+    .hero p{max-width:690px;color:#dbe5f5;font-size:16px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px}
+    .btn-primary{background:#fff;color:var(--navy)}
+    .btn-outline{border:1px solid rgba(255,255,255,.35);color:#fff}
+    .profile-card{
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+      border-radius:24px;padding:26px;box-shadow:var(--shadow)
+    }
+    .profile-card .initials{
+      width:76px;height:76px;border-radius:20px;background:#fff;color:var(--navy);
+      display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;margin-bottom:20px
+    }
+    .profile-card strong{display:block;font-size:18px;margin-bottom:4px}
+    .profile-card small{color:#cbd5e1}
+    .contact-mini{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);font-size:13px;color:#dbe5f5}
+    section{padding:78px 0}
+    .section-head{margin-bottom:35px}
+    .section-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--blue);font-weight:800;margin-bottom:8px}
+    h2.section-title{font-size:32px;letter-spacing:-1px;color:var(--navy)}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+    .about p{color:#475569}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fact,.skill-card,.project-card,.experience-card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 8px 30px rgba(15,35,75,.05)
+    }
+    .fact{padding:20px}
+    .fact strong{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
+    .fact span{font-size:13px;color:var(--muted)}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .skill-card{padding:24px}
+    .skill-card h3{font-size:16px;color:var(--navy);margin-bottom:10px}
+    .skill-card p{font-size:14px;color:#64748b}
+    .timeline{position:relative}
+    .experience-card{padding:27px;margin-bottom:18px;position:relative}
+    .experience-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:12px}
+    .experience-card h3{font-size:19px;color:var(--navy)}
+    .company{font-weight:700;color:#334155;font-size:14px}
+    .date{white-space:nowrap;font-size:13px;color:var(--blue);font-weight:700;background:#eff6ff;padding:6px 10px;border-radius:999px}
+    .experience-card p{font-size:14px;color:#5b677a}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project-card{padding:26px}
+    .project-number{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:1px}
+    .project-card h3{margin:7px 0 8px;color:var(--navy);font-size:18px}
+    .project-card p{font-size:14px;color:#64748b}
+    .tag{display:inline-block;margin:13px 6px 0 0;padding:5px 9px;background:#f1f5f9;border-radius:8px;font-size:11px;color:#475569;font-weight:700}
+    .education{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .edu-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px}
+    .edu-card h3{font-size:17px;color:var(--navy);margin-bottom:5px}
+    .edu-card p{font-size:14px;color:#64748b}
+    .cta{background:var(--navy);color:#fff;border-radius:28px;padding:50px}
+    .cta h2{font-size:32px;margin-bottom:10px}
+    .cta p{color:#dbe5f5;margin-bottom:25px}
+    footer{padding:30px 0;background:#07162f;color:#b7c3d7;font-size:13px}
+    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){
+      .nav-links{display:none}
+      .hero-grid,.about,.skills-grid,.projects,.education{grid-template-columns:1fr}
+      .hero{padding:70px 0}
+      .profile-card{max-width:500px}
+      section{padding:60px 0}
+      .experience-top{flex-direction:column}
+      .date{white-space:normal}
+      .cta{padding:35px 25px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#home">FACHRUL ISLAM<span>PORTFOLIO</span></a>
+    <div class="nav-links">
+      <a href="#about">Profil</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Professional Portfolio</div>
+      <h1>Muhamad<br>Fachrul Islam</h1>
+      <h2>Administration · Data Management · Digital Support</h2>
+      <p>
+        Profesional dengan pengalaman di bidang administrasi, pengelolaan data, customer service,
+        marketing, dan digital support. Terbiasa menangani dokumen, data entry, reporting,
+        koordinasi administrasi, pengelolaan media sosial, dan penggunaan Microsoft Office.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Hubungi Saya</a>
+        <a class="btn btn-outline" href="https://github.com/fachrulislam48-oss" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div class="initials">MFI</div>
+      <strong>Open to Opportunities</strong>
+      <small>Administration · Data · Digital Support</small>
+      <div class="contact-mini">
+        Kuningan, Jawa Barat<br>
+        0852 2175 5591<br>
+        fachrulislam48@gmail.com
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">01 — Profil</div>
+      <h2 class="section-title">Tentang Saya</h2>
+    </div>
+    <div class="about">
+      <div>
+        <p>
+          Saya memiliki pengalaman sebagai Staff Administrasi di Kejaksaan Negeri Kuningan,
+          Marketing / Account Officer di PT. BPR Raksa Wacana Agri Purnama, serta Admin Social Media
+          & Digital Support di StayMe.id.
+        </p>
+        <br>
+        <p>
+          Saya terbiasa bekerja dengan dokumen dan data, membuat laporan, melakukan koordinasi,
+          berkomunikasi dengan pelanggan/nasabah, serta mendukung kebutuhan digital dan media sosial.
+          Saya memiliki kemampuan komunikasi yang baik, teliti, adaptif, dan mampu bekerja secara
+          mandiri maupun dalam tim.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>Administration</strong><span>Document & administrative support</span></div>
+        <div class="fact"><strong>Data Management</strong><span>Data entry, tracking & reporting</span></div>
+        <div class="fact"><strong>Microsoft Office</strong><span>Excel, Word & Google Sheets</span></div>
+        <div class="fact"><strong>Digital Support</strong><span>Social media & content planning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">02 — Experience</div>
+      <h2 class="section-title">Pengalaman Kerja</h2>
+    </div>
+    <div class="timeline">
+      <article class="experience-card">
+        <div class="experience-top">
+          <div><h3>Admin Social Media & Digital Support</h3><div class="company">StayMe.id</div></div>
+          <div class="date">2026</div>
+        </div>
+        <p>
+          Mengelola aktivitas media sosial Instagram dan TikTok mulai dari perencanaan konten hingga
+          publikasi. Bertanggung jawab dalam menyusun content plan, mengembangkan ide dan konsep konten,
+          membuat caption, hook, CTA, serta materi promosi. Turut mendukung kebutuhan digital StayMe
+          melalui pengelolaan informasi booking, fasilitas, check-in, check-out, website, serta
+          monitoring dasar performa konten.
+        </p>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-top">
+          <div><h3>Marketing / Account Officer</h3><div class="company">PT. BPR Raksa Wacana Agri Purnama</div></div>
+          <div class="date">Jul 2023 – Mei 2024</div>
+        </div>
+        <p>
+          Bertanggung jawab dalam pemasaran produk kepada calon nasabah dan pengelolaan hubungan
+          dengan nasabah melalui komunikasi serta follow-up secara berkala. Bekerja dengan target
+          penjualan hingga Rp200 juta per bulan, termasuk melakukan cross-selling dan up-selling
+          sesuai kebutuhan nasabah.
+        </p>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-top">
+          <div><h3>Staff Administrasi</h3><div class="company">Kejaksaan Negeri Kuningan</div></div>
+          <div class="date">Sep 2020 – Feb 2022</div>
+        </div>
+        <p>
+          Mendukung kegiatan administrasi kantor melalui pengelolaan dokumen, penyusunan surat dan
+          laporan, serta penyiapan berbagai kebutuhan administrasi kegiatan. Turut membantu pengaturan
+          jadwal, koordinasi administrasi, dan penyusunan dokumen intelijen dengan memastikan dokumen
+          tersusun secara rapi, lengkap, dan mudah ditelusuri.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">03 — Skills</div>
+      <h2 class="section-title">Keahlian</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>Administration</h3><p>Administrative Support · Data Entry · Document Management · Filing & Documentation · Reporting · Data Management · Administrative Coordination</p></div>
+      <div class="skill-card"><h3>Microsoft Office</h3><p>Microsoft Excel · Microsoft Word · Google Sheets · Google Docs</p></div>
+      <div class="skill-card"><h3>Excel & Data</h3><p>VLOOKUP · HLOOKUP · Pivot Table · Data Tracking · Basic Reporting</p></div>
+      <div class="skill-card"><h3>Digital & Social Media</h3><p>Social Media Management · Instagram · TikTok · Content Planning · Copywriting · Meta Business Suite · Basic Social Media Analytics · Basic Video Editing · AI Content Creation</p></div>
+      <div class="skill-card"><h3>Customer & Communication</h3><p>Customer Service · Communication · Follow-up · Problem Solving · Coordination</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">04 — Projects</div>
+      <h2 class="section-title">Project & Portfolio</h2>
+    </div>
+    <div class="projects">
+      <article class="project-card">
+        <div class="project-number">PROJECT 01</div>
+        <h3>Administrative Tracking System</h3>
+        <p>Sistem tracking untuk membantu memantau data, tugas, status pekerjaan, dokumen, dan kebutuhan administrasi secara lebih terstruktur.</p>
+        <span class="tag">Excel</span><span class="tag">Data Management</span><span class="tag">Tracking</span>
+      </article>
+      <article class="project-card">
+        <div class="project-number">PROJECT 02</div>
+        <h3>Excel Tracking & Reporting</h3>
+        <p>Pengolahan data menggunakan spreadsheet untuk tracking, reporting, dan penyajian informasi yang lebih mudah dipantau.</p>
+        <span class="tag">Microsoft Excel</span><span class="tag">Reporting</span><span class="tag">Dashboard</span>
+      </article>
+      <article class="project-card">
+        <div class="project-number">PROJECT 03</div>
+        <h3>Social Media Management</h3>
+        <p>Perencanaan dan pengembangan konten Instagram dan TikTok, termasuk content planning, copywriting, CTA, dan monitoring performa dasar.</p>
+        <span class="tag">Instagram</span><span class="tag">TikTok</span><span class="tag">Content Planning</span>
+      </article>
+      <article class="project-card">
+        <div class="project-number">PROJECT 04</div>
+        <h3>Digital Support</h3>
+        <p>Dukungan digital untuk kebutuhan informasi, website, booking, branding, dan komunikasi pelanggan pada StayMe.id.</p>
+        <span class="tag">Digital Support</span><span class="tag">Website</span><span class="tag">Customer Support</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">05 — Education</div>
+      <h2 class="section-title">Pendidikan & Pelatihan</h2>
+    </div>
+    <div class="education">
+      <div class="edu-card">
+        <h3>Institut Agama Islam Negeri Syekh Nurjati Cirebon</h3>
+        <p>Hukum Keluarga · IPK 3.39/4.00 · 2017–2022</p>
+      </div>
+      <div class="edu-card">
+        <h3>Pelatihan</h3>
+        <p>Office Tools / Aplikasi Perkantoran — CBI, 2021<br>Manajemen Kinerja Karyawan — LKP Cakra Surakarta, 2023</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="cta">
+      <div class="section-label" style="color:#bfdbfe">06 — Contact</div>
+      <h2>Mari terhubung.</h2>
+      <p>Saya terbuka untuk kesempatan yang relevan di bidang Administration, Data Management, dan Digital Support.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:fachrulislam48@gmail.com">Email Saya</a>
+        <a class="btn btn-outline" href="https://github.com/fachrulislam48-oss" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Muhamad Fachrul Islam</span>
+    <span>Administration · Data Management · Digital Support</span>
+  </div>
+</footer>
+
+</body>
+</html>
